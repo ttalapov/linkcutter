@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LinkCutter – Telegram Bot</title>
+  <meta name="description" content="Telegram bot that removes tracking parameters from links. Supports YouTube, Instagram, TikTok, Facebook and 10+ more platforms." />
+  <link rel="icon" href="img/logo.svg" type="image/svg+xml" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <meta property="og:title" content="LinkCutter – Telegram Bot" />
+  <meta property="og:description" content="Removes tracking parameters from YouTube, Instagram, TikTok and 10+ platforms. Free Telegram bot." />
+  <meta property="og:image" content="https://ttalapov.github.io/LinkCutterBot/img/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:url" content="https://ttalapov.github.io/LinkCutterBot/" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://ttalapov.github.io/LinkCutterBot/img/og-image.png" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#2563eb" />
+  <link rel="canonical" href="https://ttalapov.github.io/LinkCutterBot/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" onload="this.rel='stylesheet'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" /></noscript>
+  <link rel="stylesheet" href="style.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "LinkCutter",
+    "url": "https://ttalapov.github.io/LinkCutterBot/",
+    "description": "Telegram bot that removes tracking parameters from links. Supports YouTube, Instagram, TikTok, Facebook and 10+ more platforms.",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Telegram",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "image": "https://ttalapov.github.io/LinkCutterBot/img/og-image.png"
+  }
+  </script>
+</head>
+<body>
+
+<!-- NAV -->
+<nav aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="#hero" class="nav-logo">
+      <img src="img/logo.svg" alt="LinkCutter logo" width="32" height="32" />
+      <span>LinkCutter</span>
+    </a>
+    <div class="nav-right">
+      <div class="lang-switch">
+        <button class="lang-btn" type="button" data-switch="uk" aria-label="Переключити на українську">🇺🇦 UK</button>
+        <button class="lang-btn" type="button" data-switch="ru" aria-label="Переключить на русский">🇷🇺 RU</button>
+        <button class="lang-btn" type="button" data-switch="en" aria-label="Switch to English">🇬🇧 EN</button>
+      </div>
+      <a href="https://t.me/LinkCutterBot" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+        <span data-lang="uk" class="btn-label">Відкрити бота</span>
+        <span data-lang="ru" class="btn-label">Открыть бота</span>
+        <span data-lang="en" class="btn-label">Open bot</span>
+      </a>
+    </div>
+  </div>
+</nav>
+
+<main>
+<!-- HERO -->
+<section id="hero">
+  <div class="container">
+    <img src="img/logo.svg" alt="LinkCutter" class="hero-logo" width="88" height="88" />
+
+    <div class="section-tag">
+      <span data-lang="uk">✂️ Telegram бот</span>
+      <span data-lang="ru">✂️ Telegram бот</span>
+      <span data-lang="en">✂️ Telegram bot</span>
+    </div>
+
+    <h1>
+      <span data-lang="uk">Чисті посилання –<br>без трекінгу</span>
+      <span data-lang="ru">Чистые ссылки –<br>без слежки</span>
+      <span data-lang="en">Clean links –<br>no tracking</span>
+    </h1>
+
+    <p class="lead">
+      <span data-lang="uk">LinkCutter автоматично прибирає параметри стеження з посилань YouTube, Instagram, TikTok та ще 10+ платформ.</span>
+      <span data-lang="ru">LinkCutter автоматически убирает параметры слежки из ссылок YouTube, Instagram, TikTok и ещё 10+ платформ.</span>
+      <span data-lang="en">LinkCutter automatically removes tracking parameters from YouTube, Instagram, TikTok and 10+ more platforms.</span>
+    </p>
+
+    <div class="hero-btns">
+      <a href="https://t.me/LinkCutterBot" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">
+        ✈️
+        <span data-lang="uk">Запустити в Telegram</span>
+        <span data-lang="ru">Запустить в Telegram</span>
+        <span data-lang="en">Start in Telegram</span>
+      </a>
+      <a href="#platforms" class="btn btn-ghost btn-lg">
+        <span data-lang="uk">Платформи</span>
+        <span data-lang="ru">Платформы</span>
+        <span data-lang="en">Platforms</span>
+      </a>
+    </div>
+
+    <div class="hero-badge">
+      <div class="dot"></div>
+      <span data-lang="uk">Безкоштовно · Без реєстрації · Миттєво</span>
+      <span data-lang="ru">Бесплатно · Без регистрации · Мгновенно</span>
+      <span data-lang="en">Free · No sign-up · Instant</span>
+    </div>
+
+    <div class="platforms-banner">
+      <img src="img/platforms.png" alt="Supported platforms: YouTube, Instagram, Threads, Facebook, TikTok, Telegram, Twitter/X, Spotify, Amazon, AliExpress, LinkedIn, Pinterest, Reddit, VK" width="860" height="200" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how">
+  <div class="container">
+    <div class="section-tag">
+      <span data-lang="uk">Як це працює</span>
+      <span data-lang="ru">Как это работает</span>
+      <span data-lang="en">How it works</span>
+    </div>
+    <h2>
+      <span data-lang="uk">Три простих кроки</span>
+      <span data-lang="ru">Три простых шага</span>
+      <span data-lang="en">Three simple steps</span>
+    </h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h3><span data-lang="uk">Надішли посилання</span><span data-lang="ru">Отправь ссылку</span><span data-lang="en">Send a link</span></h3>
+        <p><span data-lang="uk">Встав посилання або текст із посиланням прямо в чат бота. Можна кілька одразу – до 10.</span>
+           <span data-lang="ru">Вставь ссылку или текст со ссылкой прямо в чат бота. Можно несколько сразу – до 10.</span>
+           <span data-lang="en">Paste a link or text containing a link directly into the bot chat. Up to 10 at once.</span></p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h3><span data-lang="uk">Бот очищує</span><span data-lang="ru">Бот очищает</span><span data-lang="en">Bot cleans it</span></h3>
+        <p><span data-lang="uk">LinkCutter розпізнає платформу і видаляє всі трекінгові параметри, зберігаючи важливі.</span>
+           <span data-lang="ru">LinkCutter определяет платформу и удаляет все трекинговые параметры, сохраняя нужные.</span>
+           <span data-lang="en">LinkCutter detects the platform and removes all tracking parameters while keeping important ones.</span></p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h3><span data-lang="uk">Скопіюй і поділись</span><span data-lang="ru">Скопируй и поделись</span><span data-lang="en">Copy and share</span></h3>
+        <p><span data-lang="uk">Натисни «Скопіювати» і поділись чистим посиланням – без стеження.</span>
+           <span data-lang="ru">Нажми «Скопировать» и поделись чистой ссылкой – без слежки.</span>
+           <span data-lang="en">Hit "Copy" and share the clean link – no tracking attached.</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PLATFORMS -->
+<section id="platforms">
+  <div class="container">
+    <div class="section-tag">
+      <span data-lang="uk">Платформи</span>
+      <span data-lang="ru">Платформы</span>
+      <span data-lang="en">Platforms</span>
+    </div>
+    <h2>
+      <span data-lang="uk">14 платформ + будь-який сайт</span>
+      <span data-lang="ru">14 платформ + любой сайт</span>
+      <span data-lang="en">14 platforms + any website</span>
+    </h2>
+    <p class="lead mt-4">
+      <span data-lang="uk">Для кожної платформи – своя логіка очищення. UTM-мітки прибираються з будь-якого сайту.</span>
+      <span data-lang="ru">Для каждой платформы – своя логика очистки. UTM-метки убираются с любого сайта.</span>
+      <span data-lang="en">Each platform has its own cleaning logic. UTM tags are stripped from any website.</span>
+    </p>
+
+    <div class="platforms-grid">
+
+      <div class="platform-card">
+        <div class="platform-header">
+          <span class="platform-icon">▶️</span>
+          <span class="platform-name">YouTube</span>
+          <span class="platform-badge"><span data-lang="uk">Зберігає v, t, list</span><span data-lang="ru">Хранит v, t, list</span><span data-lang="en">Keeps v, t, list</span></span>
+        </div>
+        <div class="params"><span class="param">si</span><span class="param">feature</span><span class="param">pp</span><span class="param">utm_*</span></div>
+        <p class="param-desc"><span data-lang="uk">Зберігає ID відео, позицію і плейлист. Короткі youtu.be теж підтримуються.</span><span data-lang="ru">Хранит ID видео, временную метку и плейлист. Короткие youtu.be тоже поддерживаются.</span><span data-lang="en">Keeps video ID, timestamp and playlist. Short youtu.be links supported too.</span></p>
+      </div>
+
+      <div class="platform-card">
+        <div class="platform-header">
+          <span class="platform-icon">📸</span>
+          <span class="platform-name">Instagram</span>
+          <span class="platform-badge"><span data-lang="uk">Трекінг</span><span data-lang="ru">Трекинг</span><span data-lang="en">Tracking</span></span>
+        </div>
+        <div class="params"><span class="param">igshid</span><span class="param">igsh</span><span class="param">utm_*</span></div>
+        <p class="param-desc"><span data-lang="uk">Прибирає параметри відстеження із шарів Instagram.</span><span data-lang="ru">Убирает параметры отслеживания из шаров Instagram.</span><span data-lang="en">Removes share-tracking parameters added by the Instagram app.</span></p>
+      </div>
+
+      <div class="platform-card">
+        <div class="platform-header">
+          <span class="platform-icon">🧵</span>
+          <span class="platform-name">Threads</span>
+          <span class="platform-badge"><span data-lang="uk">Трекінг</span><span data-lang="ru">Трекинг</span><span data-lang="en">Tracking</span></span>
+        </div>
+        <div class="params"><span class="param">xmt</span><span class="param">slof</span><span class="param">utm_*</span></div>
+        <p class="param-desc"><span data-lang="uk">Підтримує threads.com і threads.net.</span><span data-lang="ru">Поддерживает threads.com и threads.net.</span><span data-lang="en">Supports both threads.com and threads.net.</span></p>
+      </div>
+
+      <div class="platform-card">
+        <div class="platform-header">
+          <span class="platform-icon">📘</span>
+          <span class="platform-name">Facebook</span>
+          <span class="platform-badge"><span data-lang="uk">Трекінг</span><span data-lang="ru">Трекинг</span><span data-lang="en">Tracking</span></span>
+        </div>
+        <div class="params"><span class="param">fbclid</span><span class="param">utm_*</span></div>
+        <p class="param-desc"><span data-lang="uk">Також fb.com, fb.me, fb.watch.</span><span data-lang="ru">Также fb.com, fb.me, fb.watch.</span><span data-lang="en">Also handles fb.com, fb.me, fb.watch.</span></p>
+      </div>
+
+      <div class="platform-card">
+        <div class="platform-header">
+          <span class="platform-icon">🎵</span>
+          <span class="platform-name">TikTok</span>
+          <span class="platform-badge"><span data-lang="uk">Трекінг</span><span data-lang="ru">Трекинг</span><span data-lang="en">Tracking</span></span>
+        </div>
+        <div class="params"><span class="param">_r</span><span class="param">checksum</span><span class="param">is_from_webapp</span><span class="param">sender_device</span></div>
+      </div>
+
+      <div class="platform-card">
+        <div class="platform-header">
+          <span class="platform-icon">✈️</span>
+          <span class="platform-name">Telegram</span>
+          <span class="platform-badge strip"><span data-lang="uk">Все</span><span data-lang="ru">Всё</span><span data-lang="en">All</span></span>
+        </div>
+        <div class="params"><span class="param">?single</span></div>
+        <p class="param-desc"><span data-lang="uk">Видаляє всі параметри з t.me і telegram.me посилань.</span><span data-lang="ru">Удаляет все параметры из t.me и telegram.me ссылок.</span><span data-lang="en">Strips all parameters from t.me and telegram.me links.</span></p>
+      </div>
+
+      <div class="platform-card">
+        <div class="platform-header">
+          <span class="platform-icon">🐦</span>
+          <span class="platform-name">Twitter / X</span>
+          <span class="platform-badge strip"><span data-lang="uk">Все</span><span data-lang="ru">Всё</span><span data-lang="en">All</span></span>
+        </div>
+        <div class="params"><span class="param">s</span><span class="param">t</span><span class="param">utm_*</span></div>
+        <p class="param-desc"><span data-lang="uk">Видаляє всі параметри. Також t.co посилання.</span><span data-lang="ru">Удаляет все параметры. Также t.co ссылки.</span><span data-lang="en">Strips all parameters. Handles t.co short links too.</span></p>
+      </div>
+
+      <div class="platform-card">
+        <div class="platform-header">
+          <span class="platform-icon">💚</span>
+          <span class="platform-name">Spotify</span>
+          <span class="platform-badge"><span data-lang="uk">Трекінг</span><span data-lang="ru">Трекинг</span><span data-lang="en">Tracking</span></span>
+        </div>
+        <div class="params"><span class="param">si</span><span class="param">utm_*</span></div>
+        <p class="param-desc"><span data-lang="uk">Також spotify.link короткі посилання.</span><span data-lang="ru">Также spotify.link короткие ссылки.</span><span data-lang="en">Also handles spotify.link short links.</span></p>
+      </div>
+
+      <div class="platform-card">
+        <div class="platform-header">
+          <span class="platform-icon">📦</span>
+          <span class="platform-name">Amazon</span>
+          <span class="platform-badge"><span data-lang="uk">Лише ASIN</span><span data-lang="ru">Только ASIN</span><span data-lang="en">ASIN only</span></span>
+        </div>
+        <div class="params"><span class="param">ref</span><span class="param">tag</span><span class="param">psc</span><span class="param">...</span></div>
+        <p class="param-desc"><span data-lang="uk">Залишає тільки /dp/ASIN. Підтримує amzn.to, a.co та всі регіональні домени.</span><span data-lang="ru">Оставляет только /dp/ASIN. Поддерживает amzn.to, a.co и все региональные домены.</span><span data-lang="en">Leaves only /dp/ASIN. Handles amzn.to, a.co and all regional domains.</span></p>
+      </div>
+
+      <div class="platform-card">
+        <div class="platform-header">
+          <span class="platform-icon">🛒</span>
+          <span class="platform-name">AliExpress</span>
+          <span class="platform-badge strip"><span data-lang="uk">Все</span><span data-lang="ru">Всё</span><span data-lang="en">All</span></span>
+        </div>
+        <div class="params"><span class="param">pdp_ext_f</span><span class="param">sku_id</span><span class="param">...</span></div>
+        <p class="param-desc"><span data-lang="uk">Видаляє всі параметри запиту.</span><span data-lang="ru">Удаляет все параметры запроса.</span><span data-lang="en">Strips all query parameters.</span></p>
+      </div>
+
+      <div class="platform-card">
+        <div class="platform-header">
+          <span class="platform-icon">💼</span>
+          <span class="platform-name">LinkedIn</span>
+          <span class="platform-badge"><span data-lang="uk">Трекінг</span><span data-lang="ru">Трекинг</span><span data-lang="en">Tracking</span></span>
+        </div>
+        <div class="params"><span class="param">trk</span><span class="param">trkInfo</span><span class="param">utm_*</span></div>
+        <p class="param-desc"><span data-lang="uk">Також lnkd.in короткі посилання.</span><span data-lang="ru">Также lnkd.in короткие ссылки.</span><span data-lang="en">Also handles lnkd.in short links.</span></p>
+      </div>
+
+      <div class="platform-card">
+        <div class="platform-header">
+          <span class="platform-icon">📌</span>
+          <span class="platform-name">Pinterest</span>
+          <span class="platform-badge"><span data-lang="uk">Трекінг</span><span data-lang="ru">Трекинг</span><span data-lang="en">Tracking</span></span>
+        </div>
+        <div class="params"><span class="param">epik</span><span class="param">utm_*</span></div>
+        <p class="param-desc"><span data-lang="uk">Також pin.it короткі посилання.</span><span data-lang="ru">Также pin.it короткие ссылки.</span><span data-lang="en">Also handles pin.it short links.</span></p>
+      </div>
+
+      <div class="platform-card">
+        <div class="platform-header">
+          <span class="platform-icon">🤖</span>
+          <span class="platform-name">Reddit</span>
+          <span class="platform-badge"><span data-lang="uk">Трекінг</span><span data-lang="ru">Трекинг</span><span data-lang="en">Tracking</span></span>
+        </div>
+        <div class="params"><span class="param">correlation_id</span><span class="param">ref_source</span><span class="param">ref_campaign</span></div>
+        <p class="param-desc"><span data-lang="uk">Також redd.it короткі посилання.</span><span data-lang="ru">Также redd.it короткие ссылки.</span><span data-lang="en">Also handles redd.it short links.</span></p>
+      </div>
+
+      <div class="platform-card">
+        <div class="platform-header">
+          <span class="platform-icon">💙</span>
+          <span class="platform-name">VK</span>
+          <span class="platform-badge"><span data-lang="uk">Трекінг</span><span data-lang="ru">Трекинг</span><span data-lang="en">Tracking</span></span>
+        </div>
+        <div class="params"><span class="param">from</span><span class="param">ref</span><span class="param">ref_source</span><span class="param">ref_domain</span></div>
+        <p class="param-desc"><span data-lang="uk">Підтримує vk.com, vk.ru, vkontakte.ru.</span><span data-lang="ru">Поддерживает vk.com, vk.ru, vkontakte.ru.</span><span data-lang="en">Supports vk.com, vk.ru, vkontakte.ru.</span></p>
+      </div>
+
+      <div class="platform-card utm-note">
+        <div class="platform-header">
+          <span class="platform-icon">📊</span>
+          <span class="platform-name"><span data-lang="uk">Будь-який сайт</span><span data-lang="ru">Любой сайт</span><span data-lang="en">Any website</span></span>
+          <span class="platform-badge"><span data-lang="uk">UTM-мітки</span><span data-lang="ru">UTM-метки</span><span data-lang="en">UTM tags</span></span>
+        </div>
+        <div class="params">
+          <span class="param">utm_source</span><span class="param">utm_medium</span><span class="param">utm_campaign</span><span class="param">gclid</span><span class="param">fbclid</span><span class="param">msclkid</span><span class="param">_ga</span><span class="param">...</span>
+        </div>
+        <p class="param-desc">
+          <span data-lang="uk">Видаляються з посилань будь-якого сайту.</span>
+          <span data-lang="ru">Удаляются из ссылок любого сайта.</span>
+          <span data-lang="en">Stripped from any website link.</span>
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- INLINE MODE -->
+<section id="inline">
+  <div class="container">
+    <div class="two-col">
+      <div>
+        <div class="section-tag">
+          <span data-lang="uk">⚡️ Інлайн-режим</span>
+          <span data-lang="ru">⚡️ Инлайн-режим</span>
+          <span data-lang="en">⚡️ Inline mode</span>
+        </div>
+        <h2>
+          <span data-lang="uk">Очищуй прямо в будь-якому чаті</span>
+          <span data-lang="ru">Очищай прямо в любом чате</span>
+          <span data-lang="en">Clean links in any chat</span>
+        </h2>
+        <p class="lead mt-4">
+          <span data-lang="uk">Не потрібно переходити в бота. Просто введи <strong>@LinkCutterBot</strong> і посилання – прямо в рядку введення будь-якого чату.</span>
+          <span data-lang="ru">Не нужно переходить в бота. Просто введи <strong>@LinkCutterBot</strong> и ссылку – прямо в строке ввода любого чата.</span>
+          <span data-lang="en">No need to open the bot. Just type <strong>@LinkCutterBot</strong> followed by your link – right in the input of any chat.</span>
+        </p>
+        <div class="inline-steps mt-6">
+          <div class="inline-step">
+            <span class="inline-step-num">1️⃣</span>
+            <span><span data-lang="uk">Введи <code>@LinkCutterBot посилання</code> в будь-якому чаті</span><span data-lang="ru">Введи <code>@LinkCutterBot ссылка</code> в любом чате</span><span data-lang="en">Type <code>@LinkCutterBot link</code> in any chat</span></span>
+          </div>
+          <div class="inline-step">
+            <span class="inline-step-num">2️⃣</span>
+            <span><span data-lang="uk">Вибери результат із спливаючого меню</span><span data-lang="ru">Выбери результат из всплывающего меню</span><span data-lang="en">Select the result from the popup menu</span></span>
+          </div>
+          <div class="inline-step">
+            <span class="inline-step-num">3️⃣</span>
+            <span><span data-lang="uk">Чисте посилання одразу відправляється у чат</span><span data-lang="ru">Чистая ссылка сразу отправляется в чат</span><span data-lang="en">The clean link is sent directly to the chat</span></span>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="inline-demo">
+          <div class="inline-input">
+            <strong>@LinkCutterBot</strong>&nbsp;<a href="https://youtu.be/Qm1z96M0Tb0?si=lRuv-QvzJIPZbX-n" target="_blank" rel="noopener noreferrer" class="demo-link dirty">https://youtu.be/Qm1z96M0Tb0?si=lRuv-QvzJIPZbX-n</a>
+          </div>
+          <div class="inline-result">
+            <div class="inline-result-icon">✂️</div>
+            <div>
+              <div class="inline-result-title">
+                <span data-lang="uk">✂️ Посилання очищено</span>
+                <span data-lang="ru">✂️ Ссылка очищена</span>
+                <span data-lang="en">✂️ Link cleaned</span>
+              </div>
+              <div class="inline-result-url"><a href="https://youtu.be/Qm1z96M0Tb0" target="_blank" rel="noopener noreferrer" class="demo-link clean">https://youtu.be/Qm1z96M0Tb0</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="container">
+    <div class="section-tag">FAQ</div>
+    <h2>
+      <span data-lang="uk">Часті запитання</span>
+      <span data-lang="ru">Частые вопросы</span>
+      <span data-lang="en">Frequently asked questions</span>
+    </h2>
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <button class="faq-q" type="button"><span data-lang="uk">Чи зберігає бот мої посилання?</span><span data-lang="ru">Хранит ли бот мои ссылки?</span><span data-lang="en">Does the bot store my links?</span></button>
+        <div class="faq-a" id="faq-panel-1"><span data-lang="uk">Ні. Бот обробляє посилання в пам'яті і нічого не зберігає. В анонімній статистиці фіксується лише платформа і факт очищення – без самих URL.</span><span data-lang="ru">Нет. Бот обрабатывает ссылки в памяти и ничего не хранит. В анонимной статистике фиксируется только платформа и факт очистки – без самих URL.</span><span data-lang="en">No. The bot processes links in memory and stores nothing. Anonymous stats only record the platform and whether a link was dirty – no URLs are saved.</span></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" type="button"><span data-lang="uk">Чому YouTube зберігає параметр t=?</span><span data-lang="ru">Почему YouTube сохраняет параметр t=?</span><span data-lang="en">Why does the bot keep the t= parameter for YouTube?</span></button>
+        <div class="faq-a" id="faq-panel-2"><span data-lang="uk">Параметр t= – це часова мітка (наприклад, t=120 означає 2:00). Він не є трекінговим і потрібен для посилань на конкретний момент відео.</span><span data-lang="ru">Параметр t= – это временная метка (например, t=120 означает 2:00). Он не является трекинговым и нужен для ссылок на конкретный момент видео.</span><span data-lang="en">The t= parameter is a timestamp (e.g. t=120 means 2:00). It is not a tracking parameter – it lets you link to a specific moment in the video.</span></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" type="button"><span data-lang="uk">Чи працює бот у групах?</span><span data-lang="ru">Работает ли бот в группах?</span><span data-lang="en">Does the bot work in groups?</span></button>
+        <div class="faq-a" id="faq-panel-3"><span data-lang="uk">Так, через інлайн-режим – введи @LinkCutterBot і посилання прямо в рядку повідомлення будь-якої групи. Без необхідності додавати бота в групу.</span><span data-lang="ru">Да, через инлайн-режим – введи @LinkCutterBot и ссылку прямо в строке сообщения любой группы. Не нужно добавлять бота в группу.</span><span data-lang="en">Yes, via inline mode – type @LinkCutterBot followed by your link in the message input of any group. No need to add the bot to the group.</span></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" type="button"><span data-lang="uk">Чи можна надіслати кілька посилань одразу?</span><span data-lang="ru">Можно ли отправить несколько ссылок сразу?</span><span data-lang="en">Can I send multiple links at once?</span></button>
+        <div class="faq-a" id="faq-panel-4"><span data-lang="uk">Так! Просто вставте кілька посилань в одне повідомлення – бот обробить до 10 посилань одночасно.</span><span data-lang="ru">Да! Просто вставь несколько ссылок в одно сообщение – бот обработает до 10 ссылок одновременно.</span><span data-lang="en">Yes! Just paste multiple links in one message – the bot will process up to 10 links at once.</span></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" type="button"><span data-lang="uk">Що таке UTM-мітки і чому їх треба видаляти?</span><span data-lang="ru">Что такое UTM-метки и зачем их удалять?</span><span data-lang="en">What are UTM tags and why remove them?</span></button>
+        <div class="faq-a" id="faq-panel-5"><span data-lang="uk">UTM-мітки (utm_source, utm_medium тощо) – параметри для відстеження рекламних кампаній. Вони не потрібні для переходу за посиланням, але дозволяють власникам сайтів знати, звідки ти прийшов.</span><span data-lang="ru">UTM-метки (utm_source, utm_medium и др.) – параметры для отслеживания рекламных кампаний. Они не нужны для перехода по ссылке, но позволяют владельцам сайтов знать, откуда ты пришёл.</span><span data-lang="en">UTM tags (utm_source, utm_medium, etc.) are parameters used to track marketing campaigns. They are not needed to access the linked content, but tell website owners where you came from.</span></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" type="button"><span data-lang="uk">Яку мову інтерфейсу підтримує бот?</span><span data-lang="ru">Какие языки интерфейса поддерживает бот?</span><span data-lang="en">What interface languages does the bot support?</span></button>
+        <div class="faq-a" id="faq-panel-6"><span data-lang="uk">Бот підтримує три мови: українську 🇺🇦, російську 🇷🇺 та англійську 🇬🇧. Мова визначається автоматично або змінюється командою /lang.</span><span data-lang="ru">Бот поддерживает три языка: украинский 🇺🇦, русский 🇷🇺 и английский 🇬🇧. Язык определяется автоматически или меняется командой /lang.</span><span data-lang="en">The bot supports three languages: Ukrainian 🇺🇦, Russian 🇷🇺 and English 🇬🇧. Language is detected automatically or can be changed with the /lang command.</span></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <a href="#hero" class="footer-logo">
+      <img src="img/logo.svg" alt="LinkCutter" width="28" height="28" />
+      <span>LinkCutter</span>
+    </a>
+    <div class="footer-links">
+      <a href="https://t.me/LinkCutterBot" target="_blank" rel="noopener noreferrer">Telegram</a>
+      <!-- <a href="https://github.com/ttalapov/LinkCutter" target="_blank" rel="noopener noreferrer">GitHub</a> -->
+      <a href="#platforms"><span data-lang="uk">Платформи</span><span data-lang="ru">Платформы</span><span data-lang="en">Platforms</span></a>
+      <a href="#faq">FAQ</a>
+    </div>
+    <div class="footer-copy">
+      <span data-lang="uk">Зроблено з 💙 для чистого інтернету</span>
+      <span data-lang="ru">Сделано с 💙 для чистого интернета</span>
+      <span data-lang="en">Made with 💙 for a cleaner internet</span>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
