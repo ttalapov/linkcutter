@@ -284,5 +284,5 @@ footer {
   #hero    { padding: 40px 16px 32px; }
   nav      { padding: 0 16px; }
   .platforms-grid { grid-template-columns: 1fr; }
-  .nav-right .btn-primary .btn-label { display: none; }
+  .nav-right .btn-primary { display: none; }
 }
